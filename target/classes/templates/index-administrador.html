@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Panel de Administración - LuJosGym</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<style>
+	/* Ajustes de estilo para el panel de administración */
+	body {
+		font-family: 'Arial', sans-serif;
+	}
+
+	h2,
+	h4 {
+		font-weight: 700;
+	}
+
+	.navbar {
+		border-bottom: 2px solid #fff;
+	}
+
+	.nav-link {
+		color: #fff !important;
+	}
+
+	.navbar-brand {
+		color: #00bfff !important;
+		font-weight: bold;
+	}
+
+	.card {
+		border-radius: 10px;
+	}
+
+	.card-header {
+		border-radius: 10px 10px 0 0;
+	}
+
+	.card-body {
+		background-color: #f9f9f9;
+		border-radius: 0 0 10px 10px;
+	}
+
+	footer {
+		position: fixed;
+		width: 100%;
+		bottom: 0;
+	}
+
+	.btn-block {
+		font-size: 16px;
+		font-weight: bold;
+	}
+
+	.form-control-file {
+		border-radius: 5px;
+	}
+
+	.bg-dark {
+		background-color: #333 !important;
+	}
+
+	.bg-info {
+		background-color: #17a2b8 !important;
+	}
+
+	.bg-warning {
+		background-color: #ffc107 !important;
+	}
+
+	.card-header,
+	.btn {
+		font-weight: bold;
+	}
+
+	/* Agregar espaciado superior al body para que el contenido no quede oculto por el navbar */
+	body {
+		padding-top: 50px;
+		padding-bottom: 50px;
+	}
+</style>
+
+<body class="bg-light">
+
+	<!-- Navbar -->
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+		<div class="container">
+			<a class="navbar-brand" href="#">LuJosGym</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+				aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item active">
+						<a class="nav-link" href="#">Panel de Administración</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" th:href="@{/}">Salir</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div class="container mt-5 pt-5">
+		<h2 class="text-center my-4 text-primary">Panel de Administración</h2>
+		<!-- Gestión de Carrusel -->
+		<div class="my-4">
+			<h4>Gestión de Imágenes del Carrusel</h4>
+			<form action="/api/admin/carousel" method="POST" enctype="multipart/form-data">
+				<input type="file" name="carouselImage" required>
+				<button type="submit" class="btn btn-primary">Agregar Imagen</button>
+			</form>
+		</div>
+
+		<!-- Promociones -->
+		<div class="my-4">
+			<h4>Promociones Temporales</h4>
+			<form action="/api/admin/promotions" method="POST">
+				<input type="text" name="promotionText" placeholder="Texto de promoción" class="form-control" required>
+				<button type="submit" class="btn btn-primary mt-2">Agregar Promoción</button>
+			</form>
+		</div>
+
+
+		<!-- Promociones -->
+		<div class="my-4">
+			<h4>Promociones Temporales</h4>
+			<form action="/api/admin/promotions" method="POST">
+				<input type="text" name="promotionText" placeholder="Texto de promoción" class="form-control" required>
+				<button type="submit" class="btn btn-primary mt-2">Agregar Promoción</button>
+			</form>
+		</div>
+
+
+
+
+
+
+		<!-- Gestión de Carrusel -->
+		<div class="my-4">
+			<h4>Usuarios</h4>
+			<div class="mt-3">
+	
+				<a href="/administrador/usuario/crear" class="btn btn-primary">Agregar Usuario</a>
+				
+				<a href="/administrador/crear" class="btn btn-secondary">Listar Usuario</a>
+			</div>
+		</div>
+
+		
+		<div class="my-4">
+			<h4>Entrenadores</h4>
+			<a th:herf="@{/administrador/entrenador/crear}" class="btn btn-primary">Agregar Entrenador</a>
+			<a th:herf="@{/administrador/lista2}" class="btn btn-secondary">Lista Entrenador</a>
+		</div>
+
+
+		<div class="my-4">
+			<h4>Fisioterapeutas</h4>
+			<a th:herf="@{/administrador/fisioterapeuta/crear}" class="btn btn-primary">Agregar Fisioterapeuta</a>
+			<a th:herf="@{/administrador/lista3}" class="btn btn-secondary">Lista Fisioterapeuta</a>
+
+		</div>
+	</div>
+
+	<!-- Footer -->
+	<footer class="bg-dark text-white text-center py-3 mt-5">
+		<p>&copy; 2024 LuJosGym. Todos los derechos reservados.</p>
+	</footer>
+
+	<!-- Bootstrap JS and dependencies -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
