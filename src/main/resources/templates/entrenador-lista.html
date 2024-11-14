@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Entrenadores</title>
+    <!-- Enlaces a los archivos CSS de Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+
+	
+	  <div class="container mt-4">
+	       <h1 class="text-center">Registros de Entrenadores</h1>
+	       <div class="row">
+	           <!-- Ciclo de registros de Entrenadores -->
+	           <div th:each="entrenador : ${entrenadores}" class="col-md-4">
+	               <div class="card">
+	                   <div class="card-header">
+						Entrenador: <span th:text="${entrenador.nombres} + ' ' + ${entrenador.apellidos}"></span>
+	                   </div>
+	                   <div class="card-body">
+						<p><strong>ID:</strong> <span th:text="${entrenador.id}"></span></p>
+						<p><strong>Usuario:</strong> <span th:text="${entrenador.usuario}"></span></p>
+						<p><strong>Contraseña:</strong> <span th:text="${entrenador.contrasena}"></span></p>
+						<p><strong>Documento:</strong> <span th:text="${entrenador.documento}"></span></p>
+						<p><strong>Nombres:</strong> <span th:text="${entrenador.nombres}"></span></p>
+						<p><strong>Apellidos:</strong> <span th:text="${entrenador.apellidos}"></span></p>
+						<p><strong>Correo Electrónico:</strong> <span th:text="${entrenador.correo}"></span></p>
+						<p><strong>Número Telefónico:</strong> <span th:text="${entrenador.telefono}"></span></p>
+						<p><strong>Rango:</strong> <span th:text="${entrenador.rango}"></span></p>
+						<p><strong>Horario:</strong> <span th:text="${entrenador.horario}"></span></p>
+						<div class="btn-group" role="group" aria-label="Acciones">
+							<a th:href="@{/administrador/entrenador/edit/{id}(id=${entrenador.id})}" class="btn btn-primary">Editar</a>
+							<a th:href="@{/administrador/entrenador/delete/{id}(id=${entrenador.id})}" class="btn btn-danger">Eliminar</a>
+						</div>
+					</div>
+				</div>
+				
+	           </div>
+	       </div>
+	   </div>
+
+
+    <!-- jQuery, Popper.js, Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

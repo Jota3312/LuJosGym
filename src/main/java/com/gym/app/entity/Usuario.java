@@ -7,132 +7,102 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 public class Usuario {
 
-	
 	@Id
 	private String id;
 
+	
 	private String usuario;
 	private String contrasena;
 
-	private String tipoDocumento;
-	private String numeroDocumento;
-	private String primerApellido;
-	private String segundoApellido;
-	private String primerNombre;
-	private String segundoNombre;
-	private String correoElectronico;
-	private String numeroTelefonico;
+	private String nombres;
+	private String apellidos;
+	private String documento;
+	private String correo;
+	private String telefono;
+	private double peso;
+	private double altura;
+	
 	
 	
 	public Usuario() {
 		super();
 	}
-
-	public Usuario(String id, String usuario, String contrasena, String tipoDocumento, String numeroDocumento,
-			String primerApellido, String segundoApellido, String primerNombre, String segundoNombre,
-			String correoElectronico, String numeroTelefonico) {
+	
+	public Usuario(String id, String usuario, String contrasena, String nombres, String apellidos, String documento,
+			String correo, String telefono, double peso, double altura) {
 		super();
 		this.id = id;
 		this.usuario = usuario;
 		this.contrasena = contrasena;
-		this.tipoDocumento = tipoDocumento;
-		this.numeroDocumento = numeroDocumento;
-		this.primerApellido = primerApellido;
-		this.segundoApellido = segundoApellido;
-		this.primerNombre = primerNombre;
-		this.segundoNombre = segundoNombre;
-		this.correoElectronico = correoElectronico;
-		this.numeroTelefonico = numeroTelefonico;
+		this.nombres = nombres;
+		this.apellidos = apellidos;
+		this.documento = documento;
+		this.correo = correo;
+		this.telefono = telefono;
+		this.peso = peso;
+		this.altura = altura;
 	}
-
-
+	
 	public String getId() {
 		return id;
 	}
-
 	public void setId(String id) {
 		this.id = id;
 	}
-
 	public String getUsuario() {
 		return usuario;
 	}
-
 	public void setUsuario(String usuario) {
 		this.usuario = usuario;
 	}
-
 	public String getContrasena() {
 		return contrasena;
 	}
-
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-
-	public String getTipoDocumento() {
-		return tipoDocumento;
+	public String getNombres() {
+		return nombres;
 	}
-
-	public void setTipoDocumento(String tipoDocumento) {
-		this.tipoDocumento = tipoDocumento;
+	public void setNombres(String nombres) {
+		this.nombres = nombres;
 	}
-
-	public String getNumeroDocumento() {
-		return numeroDocumento;
+	public String getApellidos() {
+		return apellidos;
 	}
-
-	public void setNumeroDocumento(String numeroDocumento) {
-		this.numeroDocumento = numeroDocumento;
+	public void setApellidos(String apellidos) {
+		this.apellidos = apellidos;
 	}
-
-	public String getPrimerApellido() {
-		return primerApellido;
+	public String getDocumento() {
+		return documento;
 	}
-
-	public void setPrimerApellido(String primerApellido) {
-		this.primerApellido = primerApellido;
+	public void setDocumento(String documento) {
+		this.documento = documento;
 	}
-
-	public String getSegundoApellido() {
-		return segundoApellido;
+	public String getCorreo() {
+		return correo;
 	}
-
-	public void setSegundoApellido(String segundoApellido) {
-		this.segundoApellido = segundoApellido;
+	public void setCorreo(String correo) {
+		this.correo = correo;
 	}
-
-	public String getPrimerNombre() {
-		return primerNombre;
+	public String getTelefono() {
+		return telefono;
 	}
-
-	public void setPrimerNombre(String primerNombre) {
-		this.primerNombre = primerNombre;
+	public void setTelefono(String telefono) {
+		this.telefono = telefono;
 	}
-
-	public String getSegundoNombre() {
-		return segundoNombre;
+	public double getPeso() {
+		return peso;
 	}
-
-	public void setSegundoNombre(String segundoNombre) {
-		this.segundoNombre = segundoNombre;
+	public void setPeso(double peso) {
+		this.peso = peso;
 	}
-
-	public String getCorreoElectronico() {
-		return correoElectronico;
+	public double getAltura() {
+		return altura;
 	}
-
-	public void setCorreoElectronico(String correoElectronico) {
-		this.correoElectronico = correoElectronico;
+	public void setAltura(double altura) {
+		this.altura = altura;
 	}
-
-	public String getNumeroTelefonico() {
-		return numeroTelefonico;
-	}
-
-	public void setNumeroTelefonico(String numeroTelefonico) {
-		this.numeroTelefonico = numeroTelefonico;
-	}
-
-
+	
+	
 }
