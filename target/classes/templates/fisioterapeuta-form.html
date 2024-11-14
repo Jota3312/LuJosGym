@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Formulario Fisioterapeuta</title>
+	<!-- Enlaces a los archivos CSS de Bootstrap -->
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+	<div class="container mt-4">
+		<h2 class="mb-4">Formulario de Registro de Fisioterapeuta</h2>
+		<form id="registrationForm" th:action="@{/administrador/fisioterapeuta/save}" th:object="${fisioterapeuta}" method="post">
+			<div class="row">
+				<div class="col-md-4 mb-3">
+									<label for="id">ID:</label>
+									<input th:field="*{id}" type="text" class="form-control" id="id" name="id" required>
+								</div>
+				<div class="col-md-4 mb-3">
+					<label for="usuario">Usuario:</label>
+					<input th:field="*{usuario}" type="text" class="form-control" id="usuario" name="usuario" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="password">Contraseña:</label>
+					<input th:field="*{contrasena}" type="password" class="form-control" id="password" name="contrasena" required>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 mb-3">
+					<label for="documento">Número de documento:</label>
+					<input th:field="*{documento}" type="text" class="form-control" id="documento" name="documento" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="nombres">Nombres:</label>
+					<input th:field="*{nombres}" type="text" class="form-control" id="nombres" name="nombres" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="apellidos">Apellidos:</label>
+					<input th:field="*{apellidos}" type="text" class="form-control" id="apellidos" name="apellidos" required>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col-md-4 mb-3">
+					<label for="correo">Correo Electrónico:</label>
+					<input th:field="*{correo}" type="email" class="form-control" id="correo" name="correo" required>
+				</div>
+				<div class="col-md-4 mb-3">
+					<label for="telefono">Número Telefónico:</label>
+					<input th:field="*{telefono}" type="text" class="form-control" id="telefono" name="telefono" required>
+				</div>
+				<div class="col-md-4 mb-3">
+												<label for="rango">Rango:</label>
+												<input th:field="*{rango}" type="text" class="form-control" id="rango" name="rango" required>
+											</div>
+				
+			</div>
+
+			
+		
+
+			<button type="submit" class="btn btn-primary mt-3">Enviar</button>
+		</form>
+	</div>
+
+	<!-- jQuery, Popper.js, Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

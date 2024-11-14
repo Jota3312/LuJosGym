@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="icon" href="../img/iconoweb.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Login Usuario</title>
+
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .container {
+            max-width: 400px;
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-heading {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        .input-field {
+            background-color: #fff;  /* Fondo blanco para las casillas */
+            color: #333;  /* Color de texto en negro */
+            border: 1px solid #ccc;  /* Borde gris claro */
+        }
+
+        .btn-custom {
+            background-color: #007bff;
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-custom:hover {
+            background-color: #0056b3;
+        }
+
+        .forgot-password,
+        .btn-regresar {
+            color: #007bff;
+            text-decoration: none;
+            cursor: pointer; /* Cambia el cursor a "puntero" */
+        }
+
+        .forgot-password:hover,
+        .btn-regresar:hover {
+            text-decoration: underline;
+        }
+
+        .error-message {
+            color: red;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h2 class="form-heading">Iniciar Sesión <br> Usuario</h2>
+            <div th:if="${error}" class="error-message">Usuario o contraseña incorrectos</div>
+            <form th:action="@{/usuario/logear}" method="post">
+                <div class="form-group">
+                    <label class="sr-only" for="usuario">Nombre de Usuario</label>
+                    <div class="input-group">
+                        <input type="text" class="form-control input-field" id="usuario" name="usuario"
+                            placeholder="Ingrese su nombre de usuario" required>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="sr-only" for="contrasena">Contraseña</label>
+                    <div class="input-group">
+                        <input type="password" class="form-control input-field" id="contrasena" name="contrasena"
+                            placeholder="Ingrese su contraseña" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-custom btn-block">Login</button>
+                <div class="text-center mt-3">
+                    <a class="forgot-password">¿Perdiste tu contraseña?</a><br>
+                    <a class="btn-regresar" onclick="window.history.back()">Regresar</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
